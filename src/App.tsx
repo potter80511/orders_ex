@@ -1,4 +1,5 @@
 import React from 'react';
+import TestContainer from 'src/features/test_feature/TestContainer'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           Learn React
         </a>
       </header>
+      <TestContainer/>
     </div>
   );
 }
