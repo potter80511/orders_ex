@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import TestContainer from 'src/features/test_feature/TestContainer'
 import IndexContainer from 'src/features/IndexContainer'
+import 'src/scss/theme.scss';
 
 export class AppPath {
   static get index() {
