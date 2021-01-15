@@ -55,8 +55,22 @@
       display: flex;
       align-items: center;
       padding: 30px;
+      padding-right: 50px;
+      position: relative;
       &:not(:last-child) {
         border-bottom: 2px solid #e5e5e5;
+      }
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%) rotateZ(45deg);
+        width: 15px;
+        height: 15px;
+        border: solid #909090;
+        border-width: 3px 3px 0 0;
       }
       .order-photo {
         margin-right: 15px;
