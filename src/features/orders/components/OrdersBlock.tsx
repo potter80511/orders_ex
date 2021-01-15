@@ -1,16 +1,32 @@
 import React from 'react';
 import LineOrder from 'src/features/orders/components/LineOrder';
+import { Order } from 'src/features/orders/domain/model/Order';
 
-const OrdersBlock = () => {
+type OrdersBlockProps = {
+  ordersStatus: string;
+  orders: Order[];
+};
+
+const OrdersBlock = (props: OrdersBlockProps) => {
+  const {
+    ordersStatus,
+    orders,
+  } = props;
 
   return (
     <div className="orders-block">
       <div className="orders-head">
-        <span>進行中</span>
+        <span>{ordersStatus}</span>
       </div>
-      <LineOrder/>
-      <LineOrder/>
-      <LineOrder/>
+      {orders.map(o => {
+        const {
+          logo,
+          status,
+          date,
+          name,
+        } = o;
+        return <LineOrder logo={logo} status={status} date={date} name={name} />
+      })}
     </div>
   );
 };

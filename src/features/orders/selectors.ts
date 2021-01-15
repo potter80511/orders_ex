@@ -16,7 +16,7 @@ export const inProgressOrdersSelector = createSelector(
   ({ orders }) => {
     return orders.filter(o => {
       const { status: { code } } = o;
-      return code === 1 || 2;
+      return code === 1 || code === 2;
     });
   },
 );
@@ -26,7 +26,7 @@ export const fulFilledOrdersSelector = createSelector(
   ({ orders }) => {
     return orders.filter(o => {
       const { status: { code } } = o;
-      return code === 3 || 4;
+      return code === 3 || code === 4;
     });
   },
 );
