@@ -15,13 +15,16 @@ const LineOrder = (props: LineOrderProps) => {
     date,
     name,
   } = props;
+
+  const inProgress = code === 1 || code === 2;
+  const progressClass = inProgress ? 'in-progress' : 'fulfilled'
   return (
     <div className="line-order">
       <div className="order-photo"><img src={logo} /></div>
       <div className="order-info">
         <div className="info-head">
-          <span className="order-status">{type}</span>
-          {(code === 1 || code === 2) && (
+          <span className={`order-status ${progressClass}`}>{type}</span>
+          {inProgress && (
             <span className="shipping-date">預計出貨：{date}</span>
           )}
         </div>

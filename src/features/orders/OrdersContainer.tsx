@@ -13,8 +13,6 @@ const OrdersContainer = () => {
   const fulFilledOrders = useSelector(fulFilledOrdersSelector);
   const loading = useSelector(loadingSelector);
 
-  console.log(inProgressOrders, fulFilledOrders)
-
   useEffect(() => {
     dispatch(loadOrders());
   }, []);
