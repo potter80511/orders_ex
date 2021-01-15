@@ -13,28 +13,15 @@ const ordersSlice = createSlice<State, CaseReducer>({
   name: 'orders',
   initialState: {
     orders: [],
-    loading: false,
+    loading: true,
   },
   reducers: {},
   extraReducers: {
-    [loadOrders.pending.toString()]: (state) => {
-      state.loading = true;
-    },
     [loadOrders.fulfilled.toString()]: (state, action: PayloadAction<Order[]>) => {
       state.orders = action.payload;
       state.loading = false;
     },
   },
 });
-
-// export const {
-//   joinRoom,
-//   readyGame,
-//   startGame,
-//   changePlayer,
-//   setShowGameScreen,
-//   setIsReadyToStart,
-//   setGameOver,
-// } = ordersSlice.actions;
 
 export default ordersSlice.reducer;

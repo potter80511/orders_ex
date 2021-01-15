@@ -9,7 +9,6 @@ export const loadOrders = createAsyncThunk(
       const response = await getApi('/orders');
       const { data } = response;
       const result = OrderFactory.createArrayFromNet(data);
-      console.log(result)
       return result;
     } catch (error) {
       return thunkAPI.rejectWithValue({ error: error.message })

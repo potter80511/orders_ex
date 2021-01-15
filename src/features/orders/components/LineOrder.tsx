@@ -21,7 +21,7 @@ const LineOrder = (props: LineOrderProps) => {
       <div className="order-info">
         <div className="info-head">
           <span className="order-status">{type}</span>
-          {code === 1 || code === 2 && (
+          {(code === 1 || code === 2) && (
             <span className="shipping-date">預計出貨：{date}</span>
           )}
         </div>
